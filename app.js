@@ -7,6 +7,8 @@ const cors = require('cors')
 const musicRouter = require('./router/getmusic')
 
 const app = express()
+//托管静态资源
+app.use(express.static('./static'))
 // 重新封装的res.send()
 app.use(function (req, res, next) {
     // status=0为成功 status=1为失败，默认为1
